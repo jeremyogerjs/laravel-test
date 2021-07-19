@@ -1,0 +1,30 @@
+<?php
+
+namespace Database\Factories;
+
+use App\Models\Medecin;
+use Faker\Factory;
+
+class MedecinFactory extends Factory
+{
+        /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Medecin::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'lastName' => $this->faker->lastName,
+            'firstName' => $this->faker->firstName,
+            'email' => $this->faker->unique()->companyEmail,
+        ];
+    }
+}

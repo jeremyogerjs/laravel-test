@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Patient extends Model
 {
     use HasFactory;
-
+    protected $table = 'patient';
     /**
      * The attributes that are mass assignable.
      *
@@ -17,4 +17,9 @@ class Patient extends Model
         'firstName',
         'email',
     ];
+
+    public function reservation()
+    {
+        return $this -> belongsTo(Reservation::class,'foreign_key');
+    }
 }

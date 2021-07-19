@@ -1,5 +1,5 @@
 @include('./parts/header')
-
+<?php var_dump($test) ?>
 <div class="col-4 border-2 m-3 mx-auto">
 <h2 class="text-center my-2">Réservation</h2>
     <form>

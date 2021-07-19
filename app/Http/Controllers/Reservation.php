@@ -1,11 +1,14 @@
 <?php
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
+use App\Models\Medecin;
 
 class Reservation extends Controller
 {
     public function create()
     {
-        return view('reservation',['test' => 'je suis le test']);
+        $medecin = new Medecin();
+        $medecin = $medecin::all();
+        return view('reservation',['test' => $medecin]);
     }
 }

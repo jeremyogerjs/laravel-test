@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Medecin;
 use Illuminate\Database\Seeder;
 
-class medecinSeeder extends Seeder
+class MedecinSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,10 +14,7 @@ class medecinSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('medecin')->insert([
-            'name' => Str::random(10),
-            'email' => Str::random(10).'@gmail.com',
-            'password' => Hash::make('password'),
-        ]);
+        \App\Models\Medecin::factory(10)->create();
     }
+
 }
