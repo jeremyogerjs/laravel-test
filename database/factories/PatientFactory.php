@@ -2,7 +2,7 @@
 namespace Database\Factories;
 
 use App\Models\Patient as ModelsPatient;
-use Faker\Factory;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PatientFactory extends Factory
 {
@@ -22,8 +22,8 @@ class PatientFactory extends Factory
     public function definition()
     {
         return [
-            'lastName' => $this->faker->firstName(),
-            'firstName' => $this->faker->lastName(),
+            'lastName' => $this->faker->firstName,
+            'firstName' => $this->faker->lastName,
             'email' => $this->faker->unique()->safeEmail(),
         ];
     }

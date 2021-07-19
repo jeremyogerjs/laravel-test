@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Medecin;
-use Faker\Factory;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class MedecinFactory extends Factory
 {

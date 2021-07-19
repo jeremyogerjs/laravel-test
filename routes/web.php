@@ -13,7 +13,9 @@ use App\Http\Controllers\Reservation;
 |
 */
 
-Route::get('/reservation',[Reservation::class,'create']);
+Route::get('/admin',[Reservation::class,'index']);
+Route::get('/reservation',[Reservation::class,'getMedecins']);
+Route::post('/reservation',[Reservation::class,'create']);
 
 Route::get('/', function () {
     return view('welcome');

@@ -19,6 +19,8 @@ class Reservation extends Migration
             $table -> time('hourMeeting');
             $table -> foreignId('idMedecin')->references('id')->on('medecin');
             $table -> foreignId('idPatient')->references('id')->on('patient');
+            $table -> date('created_at');
+            $table -> date('updated_at');
         });
         
     }

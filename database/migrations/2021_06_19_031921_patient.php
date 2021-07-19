@@ -18,6 +18,9 @@ class Patient extends Migration
             $table -> string('lastName',255);
             $table -> string('firstName',255);
             $table -> string('email',255) ->unique();
+            $table -> date('created_at');
+            $table -> date('updated_at');
+
         });
     }
 

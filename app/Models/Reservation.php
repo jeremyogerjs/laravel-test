@@ -21,11 +21,11 @@ class Reservation extends Model
 
     public function medecins()
     {
-        return $this -> hasMany(Medecin::class,'foreign_key');
+        return $this -> hasMany(Medecin::class,'idMedecin');
     }
 
     public function patients()
     {
-        return $this -> hasMany(Patient::class,'foreign_key');
+        return $this -> hasMany(Patient::class,'idPatient');
     }
 }

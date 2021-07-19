@@ -20,6 +20,6 @@ class Medecin extends Model
 
     public function reservation()
     {
-        return $this -> belongsTo(Reservation::class,'foreign_key');
+        return $this -> belongsTo(Reservation::class,'idMedecin');
     }
 }
