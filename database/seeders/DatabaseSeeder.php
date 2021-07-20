@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Medecin::factory()->count(10)->create();
-        Patient::factory()->count(10)->create();
-        Reservation::Factory()->count(10)->create();
+        //Patient::factory()->count(10)->create();
+        //Reservation::Factory()->count(10)->create();
     }
 }

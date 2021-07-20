@@ -18,8 +18,9 @@ class Medecin extends Model
         'email',
     ];
 
-    // public function reservation()
-    // {
-    //     return $this -> belongsTo(Reservation::class,'idMedecin');
-    // }
+    public function reservation()
+    {
+        // un medecin a plusieurs (hasMany) reservations
+        return $this -> hasMany(Reservation::class,'idMedecin');
+    }
 }

@@ -135,9 +135,26 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'patientFirstName' => [
+            'required' => 'Le prenom est obligatoire',
+            'string'    => 'Le prenom doit être une chaine de caractere valide'
         ],
+        'patientLastName' => [
+            'required' => 'Le nom est obligatoire',
+            'string' => 'Le nom doit être une chaine de caractere valide'
+        ],
+        'patientMail' => [
+            'required' => 'L\'email est obligatoire',
+            'email' => 'L\'email doit contenir au minimum un . et un @'
+        ],
+        'dateMeeting' => [
+            'required' => 'La date du rendez vous est obligatoire',
+            'date' => 'La date du rendez vous doit être une date valide',
+            'after:today' => 'La date du rendez vous ne peut être ultérieur a celle d\'aujourd\'ui'
+        ],
+        'hourMeeting' => [
+            'required' => "L'heure du rendez vous est obligatoire"
+        ]
     ],
 
     /*

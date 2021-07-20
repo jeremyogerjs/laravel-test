@@ -22,7 +22,7 @@
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/reservation">Réservation</a>
+          <a class="nav-link" href="/reservation/create">Réservation</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/admin">Administration</a>

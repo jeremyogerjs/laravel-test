@@ -5,21 +5,27 @@ use App\Models\Patient;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Reservation as ModelsReservation;
-use Illuminate\Http\RedirectResponse;
 
 class Reservation extends Controller
 {
     public function index()
     {
         $reservations = new ModelsReservation();
-        $reservations = $reservations::all();
+        $reservations = $reservations::with(['medecins','patients'])->get();
 
         return view('admin',['reservations' => $reservations]);
     }
-    public function create(Request $request)
+    public function store(Request $request)
     {
         $input = $request -> all();
 
+        $validated = $request -> validate([
+            'patientFirstName' => 'required|string',
+            'patientLastName' => 'required|string',
+            'patientMail' => 'required|email',
+            'dateMeeting'=>'required|date|after:today',
+            'hourMeeting' => 'required'
+        ]);
         $patient = new Patient();
         $patient -> firstName = $input['patientFirstName'];
         $patient -> lastName = $input['patientLastName'];
@@ -41,10 +47,10 @@ class Reservation extends Controller
 
         $lastReservation = $reservations::find($reservationId);
         $lastPatient = $patient::find($patientId);
-
-        return view('/admin',['reservations'=> $lastReservation,'patient' => $lastPatient]);
+        
+        return redirect() -> action([Reservation::class,'index']);
     }
-    public function getMedecins()
+    public function create()
     {
         $medecin = new Medecin();
         $medecin = $medecin::all();
