@@ -22,9 +22,9 @@ class PatientFactory extends Factory
     public function definition()
     {
         return [
-            'lastName' => $this->faker->firstName,
+            'lastName'  => $this->faker->firstName,
             'firstName' => $this->faker->lastName,
-            'email' => $this->faker->unique()->safeEmail(),
+            'email'     => $this->faker->unique()->safeEmail(),
         ];
     }
 }

@@ -2,8 +2,10 @@
 namespace Database\Factories;
 
 use App\Models\Medecin;
+use App\Models\Patient;
 use App\Models\Reservation;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Database\Eloquent\Factories\Sequence;
 
 class ReservationFactory extends Factory
 {
@@ -22,10 +24,10 @@ class ReservationFactory extends Factory
     public function definition()
     {
         return [
-            'dateMeeting'   => $this->faker->name(),
-            'hourMeeting'   => $this->faker->unique()->safeEmail(),
-            'idMedecin'     => Medecin::factory(),
-            'idPatient'     => Medecin::factory(),
+            'dateMeeting'   => $this->faker->date(),
+            'hourMeeting'   => $this->faker->time('H:i:s'),
+            'idMedecin'     => Medecin::all('id') -> random(),
+            'idPatient'     => Patient::all('id')->random(),
 
         ];
     }

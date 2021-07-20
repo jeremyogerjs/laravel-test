@@ -18,8 +18,8 @@ class Patient extends Model
         'email',
     ];
 
-    public function reservation()
-    {
-        return $this -> belongsTo(Reservation::class,'idPatient');
-    }
+    // public function reservation()
+    // {
+    //     return $this -> belongsTo(Reservation::class,'idPatient');
+    // }
 }

@@ -22,9 +22,9 @@ class MedecinFactory extends Factory
     public function definition()
     {
         return [
-            'lastName' => $this->faker->lastName,
+            'lastName'  => $this->faker->lastName,
             'firstName' => $this->faker->firstName,
-            'email' => $this->faker->unique()->companyEmail,
+            'email'     => $this->faker->unique()->companyEmail,
         ];
     }
 }
