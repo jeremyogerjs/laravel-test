@@ -23,4 +23,14 @@ class Patient extends Model
         // un patient a plusieurs (hasMany) reservations
         return $this -> hasMany(Reservation::class,'idPatient');
     }
+
+    public function store($input)
+    {
+        
+        $this -> firstName = $input['patientFirstName'];
+        $this -> lastName = $input['patientLastName'];
+        $this -> email = $input['patientMail'];
+
+        $this -> save();
+    }
 }

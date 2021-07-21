@@ -48,7 +48,7 @@
         </div>
         <div class="mb-3">
             <label for="dateMeeting" class="form-label">Date du rendez vous</label>
-            <input type="date" class="form-control" id="dateMeeting" name="dateMeeting" aria-describedby="dateMeetingHelp">
+            <input type="date" class="form-control" id="dateMeeting" value=" {{ old('dateMeeting') }} " name="dateMeeting" aria-describedby="dateMeetingHelp">
             <div id="dateMeetingHelp" class="text-danger">
                 @error('dateMeeting')
                     {{ $message }} 
